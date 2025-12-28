@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import {
     StyleSheet,
     Text,
@@ -42,9 +42,9 @@ export default function App() {
     const THEME = {
         bg: '#0F0F13', // Deep Dark Blue/Black
         card: '#1C1C23', // Slightly lighter
-        primary: ['#6C63FF', '#4C6EF5'], // Gradient 1
-        success: ['#00C853', '#64DD17'], // Gradient Green
-        danger: ['#D50000', '#FF5252'], // Gradient Red
+        primary: ['#6C63FF', '#4C6EF5'] as const, // Gradient 1
+        success: ['#00C853', '#64DD17'] as const, // Gradient Green
+        danger: ['#D50000', '#FF5252'] as const, // Gradient Red
         text: '#FFFFFF',
         textDim: '#8F9BB3',
         border: '#2E3A59',
