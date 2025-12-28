@@ -1,50 +1,75 @@
-# Welcome to your Expo app 👋
+# GST Calculator India (Premium Edition) 🇮🇳
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-black?logo=android)
+![Framework](https://img.shields.io/badge/Framework-Expo%20%7C%20React%20Native-blue?logo=expo)
+![Language](https://img.shields.io/badge/Language-TypeScript-007ACC?logo=typescript)
+![License](https://img.shields.io/badge/License-MIT-green)
 
-## Get started
+A **premium, offline-first** financial utility app designed for Indian businesses. Built with a focus on modern aesthetics, haptic feedback, and ease of use.
 
-1. Install dependencies
+![App Concept](https://miro.medium.com/v2/resize:fit:1260/1*NzlxOX9YSlUHqF2zDvhtjg.gif)
 
-   ```bash
-   npm install
-   ```
+## ✨ Premium Features
 
-2. Start the app
+*   **💎 Dark Mode UI**: Stunning midnight-blue OLED theme with glassmorphism elements.
+*   **⚡ Instant Calculation**: Real-time GST addition and removal logic.
+*   **📳 Haptic Experience**: Tactical feedback on every interaction for a physical feel.
+*   **🌈 Visual Polish**: Linear gradients, smooth layout animations, and custom typography.
+*   **🇮🇳 India Focused**: Pre-set tax slabs (5%, 12%, 18%, 28%) and currency formatting.
+*   **🔒 Privacy First**: 100% Offline. No data collection.
 
-   ```bash
-   npx expo start
-   ```
+## 🛠 Tech Stack
 
-In the output, you'll find options to open the app in a
+*   **Framework**: [Expo](https://expo.dev) (React Native)
+*   **Language**: TypeScript
+*   **Routing**: Expo Router (File-based routing)
+*   **UI/UX**: `expo-linear-gradient`, `expo-haptics`, Custom Animations
+*   **Utilities**: `expo-clipboard`, `expo-sharing`
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## 🚀 Getting Started
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+1.  **Clone the repository**:
+    ```bash
+    git clone https://github.com/shade-applications/gst-calculator-india.git
+    cd gst-calculator-india
+    ```
 
-## Get a fresh project
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    # or
+    bun install
+    ```
 
-When you're ready, run:
+3.  **Run the app**:
+    ```bash
+    npx expo start
+    ```
+    *   Press `a` for Android Emulator.
+    *   Press `i` for iOS Simulator.
+    *   Scan QR code with Expo Go on your physical device.
 
-```bash
-npm run reset-project
-```
+## 📱 Building for Production
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This app is configured for **EAS Build**.
 
-## Learn more
+1.  **Configure Build**:
+    ```bash
+    eas build:configure
+    ```
 
-To learn more about developing your project with Expo, look at the following resources:
+2.  **Build Android Bundle (.aab)**:
+    ```bash
+    eas build --platform android
+    ```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+3.  **Upload to Play Store**:
+    Follow our [Deployment Guide](DEPLOYMENT.md) to upload the `.aab` file to the Google Play Console.
 
-## Join the community
+## 🤝 Contributing
 
-Join our community of developers creating universal apps.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
