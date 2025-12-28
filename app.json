@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "gst-calculator",
-    "slug": "gst-calculator",
+    "name": "GST Calculator India",
+    "slug": "gst-calculator-india",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,11 +9,13 @@
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.shadeapplications.gstcalculator"
     },
     "android": {
+      "package": "com.shadeapplications.gstcalculator",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#0F0F13",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
