@@ -1,32 +1,28 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import * as Clipboard from 'expo-clipboard';
+import * as Haptics from 'expo-haptics';
+import { LinearGradient } from 'expo-linear-gradient';
+import { StatusBar } from 'expo-status-bar';
+import { useRef, useState } from 'react';
 import {
+    Keyboard,
+    LayoutAnimation,
+    Platform,
+    StatusBar as RNStatusBar,
+    SafeAreaView,
+    ScrollView,
+    Share,
     StyleSheet,
     Text,
-    View,
     TextInput,
     TouchableOpacity,
-    Keyboard,
     TouchableWithoutFeedback,
-    SafeAreaView,
-    Platform,
-    Share,
-    ScrollView,
-    LayoutAnimation,
     UIManager,
-    StatusBar as RNStatusBar,
+    View,
 } from 'react-native';
-import * as Haptics from 'expo-haptics';
-import * as Clipboard from 'expo-clipboard';
-import { LinearGradient } from 'expo-linear-gradient';
-import { Ionicons } from '@expo/vector-icons';
-import { StatusBar } from 'expo-status-bar';
-import {
-    BannerAd,
-    BannerAdSize,
-    TestIds,
-    RewardedInterstitialAd,
-    AdEventType
-} from 'react-native-google-mobile-ads';
+
+import { AdBanner } from '../components/AdBanner';
+import { useInterstitialAd } from '../hooks/useInterstitialAd';
 import { calculateGst, CalculationResult } from '../utils/gst';
 
 // Enable LayoutAnimation on Android
@@ -37,49 +33,17 @@ if (
     UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-// AD CONFIGURATION
-const DEV_MODE = __DEV__;
-const BANNER_ID = DEV_MODE ? TestIds.BANNER : 'ca-app-pub-1828915420581549/9376458765';
-// Using TestIds.REWARDED_INTERSTITIAL for dev, real ID for prod
-const INTERSTITIAL_ID = DEV_MODE ? TestIds.REWARDED_INTERSTITIAL : 'ca-app-pub-1828915420581549/3082513151';
-
-const rewardedInterstitial = RewardedInterstitialAd.createForAdRequest(INTERSTITIAL_ID, {
-    requestNonPersonalizedAdsOnly: true,
-});
-
 export default function App() {
     const [amount, setAmount] = useState('');
     const [rate, setRate] = useState(18);
     const [result, setResult] = useState<CalculationResult | null>(null);
-    const [adLoaded, setAdLoaded] = useState(false);
     const calculationCount = useRef(0);
+
+    // Hook for Interstitial Ads (Mocked on Web, Real on Native)
+    const { showAd } = useInterstitialAd();
 
     const rates = [5, 12, 18, 28];
     const quickAmounts = ['100', '500', '1000', '5000'];
-
-    // Load Interstitial Ad on Mount
-    useEffect(() => {
-        const unsubscribeLoaded = rewardedInterstitial.addAdEventListener(
-            AdEventType.LOADED,
-            () => {
-                setAdLoaded(true);
-            }
-        );
-        const unsubscribeClosed = rewardedInterstitial.addAdEventListener(
-            AdEventType.CLOSED,
-            () => {
-                setAdLoaded(false);
-                rewardedInterstitial.load(); // Load the next one
-            }
-        );
-
-        rewardedInterstitial.load();
-
-        return () => {
-            unsubscribeLoaded();
-            unsubscribeClosed();
-        };
-    }, []);
 
     // COLORS
     const THEME = {
@@ -104,8 +68,8 @@ export default function App() {
 
         // Show Ad Logic: Every 3rd calculation
         calculationCount.current += 1;
-        if (calculationCount.current % 3 === 0 && adLoaded) {
-            rewardedInterstitial.show();
+        if (calculationCount.current % 3 === 0) {
+            showAd();
         }
 
         LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -310,13 +274,7 @@ export default function App() {
                 {/* BANNER AD */}
                 <View style={styles.footer}>
                     <View style={styles.adWrapper}>
-                        <BannerAd
-                            unitId={BANNER_ID}
-                            size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
-                            requestOptions={{
-                                requestNonPersonalizedAdsOnly: true,
-                            }}
-                        />
+                        <AdBanner />
                     </View>
                 </View>
 
