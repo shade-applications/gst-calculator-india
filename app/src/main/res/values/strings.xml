@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">GST Calculator India</string>
+    <string name="calculate">Calculate</string>
+    <string name="add_gst">Add GST</string>
+    <string name="remove_gst">Remove GST</string>
+</resources>
