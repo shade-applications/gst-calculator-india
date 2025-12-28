@@ -1,55 +1,50 @@
-# GST Calculator India (Offline) 🇮🇳
+# Welcome to your Expo app 👋
 
-![Platform](https://img.shields.io/badge/Platform-Android-green)
-![Language](https://img.shields.io/badge/Language-Kotlin-purple)
-![License](https://img.shields.io/badge/License-MIT-blue)
+This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-A **simple, fast, and offline** Android application designed for Indian shopkeepers, freelancers, and small business owners to calculate GST instantly.
+## Get started
 
-![App Concept](https://miro.medium.com/v2/resize:fit:1260/1*NzlxOX9YSlUHqF2zDvhtjg.gif)
+1. Install dependencies
 
-## 🚀 Features
-
-- **Instant GST Calculation**: Calculate GST for 5%, 12%, 18%, and 28% slabs.
-- **Reverse GST**: Easily remove GST from a final amount to find the original cost.
-- **Offline First**: No internet required for calculation. Privacy focused.
-- **Copy & Share**: Quick copy button to share results on WhatsApp or other apps.
-- **Lightweight**: Minimal size, optimized for all Android devices.
-
-## 📱 Screenshots
-
-_(Screenshots placeholder - to be updated after UI implementation)_
-
-## 🛠 Tech Stack
-
-- **Language**: Kotlin
-- **UI Toolkit**: Jetpack Compose (Modern native UI)
-- **Architecture**: MVVM (Clean Architecture)
-- **Monetization**: Google AdMob (Banner & Interstitial)
-- **Minimum SDK**: API 24 (Android 7.0)
-
-## 📥 Installation
-
-1. Clone the repository:
    ```bash
-   git clone https://github.com/shade-applications/gst-calculator-india.git
+   npm install
    ```
-2. Open in **Android Studio**.
-3. Sync Gradle.
-4. Run on Emulator or Physical Device.
 
-## 🤝 Contribution
+2. Start the app
 
-Contributions are welcome!
-1. Fork the project.
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a Pull Request.
+   ```bash
+   npx expo start
+   ```
 
-## 📄 License
+In the output, you'll find options to open the app in a
 
-Distributed under the MIT License. See `LICENSE` for more information.
+- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
+- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
+- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
 
----
-**Built with ❤️ for India**
+You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+
+## Get a fresh project
+
+When you're ready, run:
+
+```bash
+npm run reset-project
+```
+
+This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+
+## Learn more
+
+To learn more about developing your project with Expo, look at the following resources:
+
+- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
+- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+
+## Join the community
+
+Join our community of developers creating universal apps.
+
+- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
+- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
